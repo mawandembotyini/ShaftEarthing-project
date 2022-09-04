@@ -56,6 +56,7 @@ def test_voltage(loaded_model):
     x = np.expand_dims(x,axis=0)
     images = np.vstack([x])
     val = loaded_model.predict(images)
+    os.remove('voltage.png')
     return val[0][0]
 
 #test the health state of current brush
@@ -65,4 +66,5 @@ def test_current(loaded_model):
     x = np.expand_dims(x,axis=0)
     images = np.vstack([x])
     val = loaded_model.predict(images)
+    os.remove('current.png')
     return val[0][0]
